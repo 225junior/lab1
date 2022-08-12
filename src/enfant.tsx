@@ -3,10 +3,14 @@ import { ChildFunc } from "./chanel"
 
 type Props = {
     nom: string,
-    prenoms?:string,
-    func:ChildFunc
+    prenoms?:string
 }
-export const Enfant = (entant : Props) => {
+
+const func: ChildFunc = {
+       
+}
+
+const EnfantComponent = (entant : Props) => {
     const [counter, setCounter] = React.useState(0)
     
 
@@ -14,7 +18,7 @@ export const Enfant = (entant : Props) => {
         setCounter(prev => prev + 1)
     }
 
-    entant.func.exec = Incrementer
+    func.exec = Incrementer
     
     console.log("chargement de enfant");
     return (
@@ -22,4 +26,9 @@ export const Enfant = (entant : Props) => {
             je suis l'enfant {entant.nom} {entant.prenoms} et j'ai {counter} ans
         </div>
     )
-} 
+}
+
+export const Enfant = {
+    component: EnfantComponent,
+    incrementer() {func.exec && func.exec()}
+}

@@ -1,22 +1,17 @@
 import React from "react"
-import { ChildFunc } from "./chanel"
 import { Enfant } from "./enfant"
 
 export const Parent = () => {
 
-    const func: ChildFunc = {
-       
-    }
-
+    console.log("chargement du parent");
 
     const Incrementer = () => {
-        func.exec && func.exec()
-        console.log("chargement du parent");
+        Enfant.incrementer()
     }
     return (
         <div>
-            <button className="btn btn-outline-warning me-2" onClick={Incrementer}>Incrementer chez l'enfant</button>
-            <Enfant nom={"Dagobert"} prenoms={"Fulbert Lambertin"} func={func} />
+            <button className="btn btn-outline-warning me-2" onClick={Incrementer}>Incrementer chez le parent</button>
+            <Enfant.component nom={"Dagobert"} prenoms={"Fulbert Lambertin"} />
         </div>
     )
 }
