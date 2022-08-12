@@ -10,9 +10,8 @@ export const Parent = () => {
     }
     return (
         <div>
-            <button className="btn btn-outline-light me-5" onClick={Incrementer}>Incrementer</button>
             je suis le parent jai {counter} ans
-            <Enfant nom={"Dagobert"} prenoms={"Fulbert Lambertin"} />
+            <Enfant nom={"Dagobert"} prenoms={"Fulbert Lambertin"} updateParent={Incrementer} />
 
         </div>
     )
