@@ -12,7 +12,7 @@ export const Parent = () => {
         <div>
             <button className="btn btn-outline-light me-5" onClick={Incrementer}>Incrementer</button>
             je suis le parent jai {counter} ans
-            <Enfant />
+            <Enfant nom={"Dagobert"} prenoms={"Fulbert Lambertin"} />
         </div>
     )
 }
