@@ -1,18 +1,22 @@
 import React from "react"
+import { ChildFunc } from "./chanel"
 import { Enfant } from "./enfant"
 
 export const Parent = () => {
-    const [counter, setCounter] = React.useState(0)
+
+    const func: ChildFunc = {
+       
+    }
+
 
     const Incrementer = () => {
-        setCounter(prev => prev + 1)
+        func.exec && func.exec()
         console.log("chargement du parent");
     }
     return (
         <div>
-            je suis le parent jai {counter} ans
-            <Enfant nom={"Dagobert"} prenoms={"Fulbert Lambertin"} updateParent={Incrementer} />
-
+            <button className="btn btn-outline-warning me-2" onClick={Incrementer}>Incrementer chez l'enfant</button>
+            <Enfant nom={"Dagobert"} prenoms={"Fulbert Lambertin"} func={func} />
         </div>
     )
 }
