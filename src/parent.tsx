@@ -1,13 +1,10 @@
-function Parent() {
-    return (<div></div>)
+import { Enfant } from "./enfant"
+
+export const Parent = () => {
+    return (
+        <div>
+            je suis le parent
+            <Enfant />
+        </div>
+    )
 }
-
-export const Parent2 = () =>{
-
-}
-
-export const Parent3 = ():JSX.Element => {
-    return (<div></div>)    
-}
-
-export default Parent

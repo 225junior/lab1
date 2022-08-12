@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Parent } from './parent';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <p>
           Bonjour tout le monde
         </p>
-        
+        <Parent />
       </header>
     </div>
   );
